@@ -38,9 +38,7 @@
 			}
 		}
 
-		@media screen and (min-width: 801px) {
-
-		}
+		@media screen and (min-width: 801px) {}
 
 		@media screen and (max-width: 800px) {
 			:root {
@@ -76,14 +74,15 @@
 
 	</header>
 	<!-- search bar -->
-	<input type="search" id="query" name="query" placeholder="Search" autofocus>
-
+	<div id="search-container">
+		<input type="search" id="query" name="query" placeholder="Search" autofocus>
+	</div>
 	<main>
 		<br>
 		<picture>
 			<source media="(min-width:1500px)" srcset="assets/images/ucsd.jpg">
 			<source media="(min-width:465px)" srcset="assets/images/sbcc.png">
-			<img src="assets/images/hongik_circle.png" id="school-image"alt="University" style="width:auto;">
+			<img src="assets/images/hongik_circle.png" id="school-image" alt="University" style="width:auto;">
 		</picture>
 		<h2>Institution</h2>
 		<form action="" method="get">

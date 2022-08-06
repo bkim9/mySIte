@@ -31,57 +31,6 @@
 	<link href="assets/images/favicon.ico" rel="icon" />
 	<style>
 
-		@media screen and (min-width: 1920px) {
-			:root {
-				font-size: 48px;
-				--footer-top-padding: 8rem;
-			}
-		}
-
-		@media screen and (min-width: 801px) {
-			#left-half>h1 {
-				position: fixed;
-			}
-		}
-
-		@media screen and (max-width: 800px) {
-			:root {
-				font-size: var(--mobile-rem);
-			}
-
-			.flex-container {
-				flex-flow: column wrap !important;
-				list-style: none;
-			}
-
-			#left-half,
-			#right-half {
-				width: 100vw;
-				height: 50vh;
-			}
-
-			#left-half {
-				background-size: 100vw 50vh;
-				background-attachment: fixed;
-				padding-top: 10vh;
-				padding-left: 0;
-				text-align: center;
-			}
-
-			#right-half {
-				margin-left: 0;
-				margin-right: 0;
-			}
-
-			#hamburger-nav {
-				margin-left: 0rem;
-				padding-left: 3rem;
-			}
-
-			#toggle:not(:checked)+.hamburger * {
-				background-color: black;
-			}
-		}
 	</style>
 </head>
 	<header id="site-big-header">
@@ -102,9 +51,10 @@
 		<a href="contacts.html">Contacts</a>
 	</nav>
 	</header>
-	<!-- search bar -->
+<!-- search bar -->
+<div id="search-container">
 	<input type="search" id="query" name="query" placeholder="Search" autofocus>
-
+</div>
 
 	<body>
 
