@@ -1,0 +1,262 @@
+<!-- I used Slack channel's anmation example on this one-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- adding google tracking -->
+<link rel="icon" href="/assets/images/favicon.svg"><link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RM2G8FGN7P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RM2G8FGN7P');
+</script>
+<!-- algolia search -->
+<script type="module">
+  // search only version
+  import algoliasearch from 'https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.esm.browser.js';
+
+  // default version
+  import algoliasearch from 'https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch.esm.browser.js';
+</script>
+
+
+<style>
+  :root {
+    --mycolor-1: #da4069;
+    --mycolor-2: #bb58e9;
+    --mycolor-3: #783ce1;
+    --mycolor-4: #38d7ec;
+    --mycolor-5: #84e95c;
+    --mycolor-6: #97ef74;
+    --mycolor-7: #f0f0db;
+    --mycolor-8: #de933e;
+  }
+
+  @font-face {
+    font-family: myFont;
+    src: url(/assets/cus-font/cus-font.ttf);
+  }
+
+  @keyframes gradation_animation {
+    0% {
+      background-position: -2% 0;
+    }
+
+    100% {
+      background-position: 102% 0;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    color: white;
+    text-align: center;
+    max-width: 100%;
+    overflow-x: hidden;
+
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: -moz-linear-gradient(left,
+        var(--mycolor-1) 0%,
+        var(--mycolor-2) 12.5%,
+        var(--mycolor-3) 25%,
+        var(--mycolor-4) 37.5%,
+        var(--mycolor-5) 50%,
+        var(--mycolor-6) 62.5%,
+        var(--mycolor-7) 75%,
+        var(--mycolor-8) 87.5%,
+        var(--mycolor-1) 100%);
+
+    /* Chrome, Safari */
+    background-image: -webkit-linear-gradient(left, var(--mycolor-1) 0%,
+        var(--mycolor-2) 12.5%,
+        var(--mycolor-3) 25%,
+        var(--mycolor-4) 37.5%,
+        var(--mycolor-5) 50%,
+        var(--mycolor-6) 62.5%,
+        var(--mycolor-7) 75%,
+        var(--mycolor-8) 87.5%,
+        var(--mycolor-1) 100%);
+
+    /* Other Browsers */
+    background-image: linear-gradient(to right,
+        var(--mycolor-1) 0%,
+        var(--mycolor-2) 12.5%,
+        var(--mycolor-3) 25%,
+        var(--mycolor-4) 37.5%,
+        var(--mycolor-5) 50%,
+        var(--mycolor-6) 62.5%,
+        var(--mycolor-7) 75%,
+        var(--mycolor-8) 87.5%,
+        var(--mycolor-1) 100%);
+
+
+    background-repeat: no-repeat;
+    background-size: 200% 200%;
+    background-position: 0 0;
+
+    animation-name: gradation_animation;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+  }
+
+  h1 {
+    text-align: center;
+    letter-spacing: 1px;
+    word-spacing: 0.15em;
+    font-size: 3em;
+    line-height: 1.2;
+    transform: translateY(52%);
+    font-family: myFont;
+  }
+
+
+  #toggle {
+    display: none;
+  }
+
+  .hamburger {
+    position: fixed;
+    cursor: pointer;
+    top: 5rem;
+    right: 2rem;
+    margin-left: -2rem;
+    margin-top: -2rem;
+    width: 2rem;
+    height: 2rem;
+    z-index: 5;
+  }
+
+  .hamburger>div {
+    position: relative;
+    width: 2rem;
+    height: .3rem;
+    border-radius: .3rem;
+    background-color: #d2c219;
+    margin-top: .3rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /** Nav Styles **/
+  #hamburger-nav {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #090E6B;
+    top: -100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    transform: scale(0);
+    text-align: left;
+    margin-left: 10rem;
+    padding-left: 10rem;
+    z-index: 4;
+    opacity: 0.9;
+  }
+
+  nav a {
+    position: relative;
+    text-decoration: none;
+    color: #d2c219;
+    font-size: 2rem;
+    display: inline-block;
+    margin-top: 1.25em;
+    transition: color 0.2s ease-in-out;
+    letter-spacing: 1px;
+  }
+
+  nav a:before {
+    content: '';
+    height: 0;
+    position: absolute;
+    width: 0.25em;
+    background-color: white;
+    left: -0.5em;
+    transition: all 0.2s ease-in-out;
+  }
+
+  nav a:hover {
+    color: white;
+  }
+
+  nav a:hover:before {
+    height: 100%;
+  }
+
+  /** Animations **/
+  #toggle:checked+.hamburger .top-bun {
+    transform: rotate(-45deg);
+    margin-top: .3rem;
+  }
+
+  #toggle:checked+.hamburger .bottom-bun {
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+
+  #toggle:checked+.hamburger .meat {
+    transform: rotate(45deg);
+    margin-top: -.3rem;
+  }
+
+  #toggle:checked+.hamburger+#hamburger-nav {
+    top: 0;
+    transform: scale(1);
+  }
+
+  #toggle:not(:checked)+.hamburger * {
+    background-color: black;
+  }
+
+  #greeting {
+    color: #fff;
+    font-family: 'Segoe UI', 'San Franscisco', Calibri, Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: calc(100% + 5vmax);
+  }
+
+  @media screen and (min-width: 1920px) {
+    :root {
+      font-size: 48px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    #hamburger-nav {
+      margin-left: 0rem;
+      padding-left: 3rem;
+    }
+
+  }
+</style>
+<h1>Beomsu Kim</h1>
+
+<!-- My navbar -->
+<input id="toggle" type="checkbox"></input>
+<label for="toggle" class="hamburger" role="button" aria-label="menu">
+  <div class="top-bun"></div>
+  <div class="meat"></div>
+  <div class="bottom-bun"></div>
+</label>
+<nav id="hamburger-nav">
+  <a href="index.html">Home</a><br>
+  <a href="mystory.html">My Story</a><br>
+  <a href="education.html">Education</a><br>
+  <a href="labs.html">Labs</a><br>
+  <a href="projects.html">Projects</a><br>
+  <a href="contacts.html">Contacts</a>
+</nav>

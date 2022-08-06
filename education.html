@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="generalstyle.css">
+	<link rel="icon" href="/assets/images/favicon.svg">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RM2G8FGN7P"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-RM2G8FGN7P');
+		function loadInstitution() {
+			const selectEl = document.querySelector('#institutions');
+			const imageSorce = `/assets/images/${selectEl.value}`;
+			const imageEl = document.getElementById('school-image');
+			imageEl.src = imageSorce;
+		}
+	</script>
+	<script type="module">
+		document.addEventListener('DOMContentLoaded', () => {
+			const selectEl = document.querySelector('#institutions');
+			selectEl.addEventListener('change', loadInstitution);
+		});
+	</script>
+
+	<meta charset="utf-8" />
+	<meta name="author" content="Beomsu Kim" />
+	<title>Education</title>
+	<link href="assets/images/favicon.ico" rel="icon" />
+	<style>
+		@media screen and (min-width: 1920px) {
+			:root {
+				font-size: 48px;
+			}
+		}
+
+		@media screen and (min-width: 801px) {
+
+		}
+
+		@media screen and (max-width: 800px) {
+			:root {
+				font-size: var(--mobile-rem);
+			}
+
+			iframe {
+				width: 80vw;
+				height: 60vh;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<header id="site-big-header">
+		<h1>Education</h1>
+		<!-- My navbar -->
+		<input id="toggle" type="checkbox"></input>
+		<label for="toggle" class="hamburger" role="button" aria-label="menu">
+			<div class="top-bun"></div>
+			<div class="meat"></div>
+			<div class="bottom-bun"></div>
+		</label>
+		<nav id="hamburger-nav">
+			<a href="index.html">Home</a><br>
+			<a href="mystory.html">My Story</a><br>
+			<a href="education.html">Education</a><br>
+			<a href="labs.html">Labs</a><br>
+			<a href="projects.html">Projects</a><br>
+			<a href="contacts.html">Contacts</a>
+		</nav>
+
+	</header>
+	<!-- search bar -->
+	<input type="search" id="query" name="query" placeholder="Search" autofocus>
+
+	<main>
+		<br>
+		<picture>
+			<source media="(min-width:1500px)" srcset="assets/images/ucsd.jpg">
+			<source media="(min-width:465px)" srcset="assets/images/sbcc.png">
+			<img src="assets/images/hongik_circle.png" id="school-image"alt="University" style="width:auto;">
+		</picture>
+		<h2>Institution</h2>
+		<form action="" method="get">
+			<label for="browser">Choose institution:</label>
+			<select id="institutions">
+				<option value="UCSD">UCSD</option>
+				<option value="SBCC">SBCC</option>
+				<option value="HongikUniv">HongikUniv</option>
+			</select>
+		</form>
+		<br />
+		<h2>Korean School Bell</h2>
+		<audio controls>
+			<source src="/assets/audios/bell.mp3" type="audio/mp3">
+			<source src="tritonfight.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+		<!-- <iframe src="https://www.ucsd.edu" title="My UCSD website!">
+				</iframe> -->
+		<h2>UCSD Video</h2>
+		<!-- <video width="75%" height="30%" controls>
+					<source src="assets/videos/bird .mp4" type="video/mp4">
+					<source src="assets/videos/bird .mp4" type="video/ogg">
+					Your browser does not support the video tag.
+				</video> -->
+		<!-- <p>a video from </p><cite>https://pixabay.com/ko/videos/...-124303/</cite></p> -->
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/GjaMgHalDb0" title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			allowfullscreen></iframe>
+		<br>
+		<br>
+		<br>
+
+	</main>
+
+	<footer style="padding-top:var(--footer-top-padding)">
+
+		<a href="contacts.html" style="text-decoration:none">
+			Contatcs
+		</a>
+		<p>Email: bek001@ucsd.edu</p>
+		<p>Tel: 469-818-4342</p>
+	</footer>
+</body>
+
+</html>

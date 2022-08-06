@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="generalstyle.css">
+	<link rel="icon" href="/assets/images/favicon.svg"><link rel="icon" type="image/x-icon">
+    <meta charset="utf-8" />
+    <meta name="author" content="Beomsu Kim" />
+    <title>CSE 134B Homework 2 Personal Portfolio Website</title>
+
+    <link rel="stylesheet" media="screen and (min-width: 1024px)" href="desktop.css">
+    <link rel="stylesheet" media="screen and (min-width: 102px)" href="mobile.css">
+	<style>
+		#contact-submit-btn {
+			background-color: rgba(135, 72, 16, 0.3);
+			border-radius: .5rem;
+			border: none;
+			width: 90%;
+			height: 2em;
+			cursor: pointer;
+
+			font: weight 3px;
+		}	
+
+		#contact-form {
+			background-color: #efe792;
+			border-radius: .5rem;
+			border: none;
+		}
+		input[type=text], input[type=email], input[list=years], input[type=date], select, textarea {
+			box-sizing: border-box;
+			width: 100%;
+			/* float: right; */
+		}
+
+
+		/* @media screen and (min-width: 1920px) {
+			:root {
+				font-size: 48px;
+				--footer-top-padding: 8rem;
+			}
+		}
+		@media screen and (min-width: 801px) {
+			#left-half > h1 {
+				position:fixed;
+			}
+		} */
+		@media screen and (max-width: 800px) {
+			:root {
+				font-size: var(--mobile-rem);
+			}
+			.flex-container {
+				flex-flow: column wrap !important; 
+				list-style: none;
+			}
+			#left-half,
+			#right-half {
+				width: 100vw;
+				height: 50vh;
+			}
+
+			#left-half {
+				background-size: 100vw 50vh;
+				background-attachment: fixed;
+				padding-top: 10vh;
+				padding-left: 0;
+				text-align: center;
+			}
+			#right-half {
+				margin-left:0;
+				margin-right: 0;
+			}
+
+			#hamburger-nav {
+				margin-left: 0rem;
+				padding-left: 3rem;
+			}
+		}
+	</style>
+</head>
+	<header id="site-big-header">
+        <h1>Contacts</h1>
+		    <!-- My navbar -->
+			<input id="toggle" type="checkbox"></input>
+			<label for="toggle" class="hamburger" role="button" aria-label="menu">
+				<div class="top-bun"></div>
+				<div class="meat"></div>
+				<div class="bottom-bun"></div>
+			</label>
+			<nav id="hamburger-nav">
+				<a href="index.html">Home</a><br>
+				<a href="mystory.html">My Story</a><br>
+				<a href="education.html">Education</a><br>
+				<a href="labs.html">Labs</a><br>
+				<a href="projects.html">Projects</a><br>
+				<a href="contacts.html">Contacts</a>
+			</nav>
+    </header>
+    <!-- search bar -->
+    <input type="search" id="query" name="query" placeholder="Search" autofocus>
+
+    <main>
+        <textarea>I encourage you to leave contacts to best interact</textarea>
+        <form action="grademidterm.php" method="post">
+            <fieldset id="contact-form">
+                <legend style="font-size:1.5em">Your Contact</legend>
+                <label for="yname">Your name:</label>
+                <input type="text" id="yname" name="yname"><br><br>
+                <label for="pid">PID:</label>
+                <input type="text" id="pid" name="pid" style="-webkit-text-security: disc;"><br><br>
+                <label for="yyear">Your year:</label>
+                <input list="years" name="yyear" id="yyear">
+                <datalist id="years">
+                    <option value="Freshmen"></option>
+                    <option value="Sophomore"></option>
+                    <option value="Junior"></option>
+                    <option value="Senior"></option>
+                </datalist>
+                <br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday"><br><br>
+                <input type="submit" id="contact-submit-btn" value="Submit">
+            </fieldset>
+        </form>
+        <hr />
+    </main>
+
+    <footer>
+		<a href="contacts.html" style="text-decoration:none">
+			Contatcs
+		</a>
+        <p>Email: bek001@ucsd.edu</p>
+        <p>Tel: 469-818-4342</p>
+    </footer>
+</body>
+</html>

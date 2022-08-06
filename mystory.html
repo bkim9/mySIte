@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="generalstyle.css">
+	<link rel="icon" href="/assets/images/favicon.svg">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RM2G8FGN7P"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-RM2G8FGN7P');
+	</script>
+
+	<meta charset="utf-8" />
+	<meta name="author" content="Beomsu Kim" />
+	<title>My Story</title>
+	<link href="assets/images/favicon.ico" rel="icon" />
+	<style>
+
+
+
+
+
+
+
+
+
+
+		#my-details {
+			margin-left: 1.5rem;
+			margin-right: 1.5rem;
+		}
+
+		#circle-svg circle {
+			fill: #090E6B;
+			animation-name: colorchange;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		@keyframes colorchange {
+			from {
+				fill: #090E6B;
+			}
+
+			to {
+				fill: #d2c219;
+			}
+		}
+
+		@media screen and (min-width: 1920px) {
+			:root {
+				font-size: 48px;
+				--footer-top-padding: 8rem;
+				--my-photo-width: 700px;
+			}
+		}
+
+		@media screen and (min-width: 801px) {
+
+		}
+
+		@media screen and (max-width: 800px) {
+			:root {
+				--my-photo-width: 250px;
+			}
+		}
+	</style>
+</head>
+
+
+<body>
+	<header id="site-big-header">
+
+		<h1>My Story</h1>
+		<!-- My navbar -->
+		<input id="toggle" type="checkbox" tabindex="0"></input>
+		<label for="toggle" class="hamburger" role="button" aria-label="menu">
+			<div class="top-bun"></div>
+			<div class="meat"></div>
+			<div class="bottom-bun"></div>
+		</label>
+		<nav id="hamburger-nav">
+			<a href="index.html">Home</a><br>
+			<a href="mystory.html">My Story</a><br>
+			<a href="education.html">Education</a><br>
+			<a href="labs.html">Labs</a><br>
+			<a href="projects.html">Projects</a><br>
+			<a href="contacts.html">Contacts</a>
+		</nav>
+
+	</header>
+
+
+
+<!-- search bar -->
+<input type="search" id="query" name="query" placeholder="Search" autofocus>
+
+	<main>
+		<h2>My photo</h2>
+		<figure id="myphoto">
+			<img alt="My Photo" src="assets/images/myphoto.jpg" style="width: var(--my-photo-width)" />
+			<figcaption>My photo?</figcaption>
+		</figure>
+
+		<h2>
+			<pre>My History</pre>
+		</h2>
+		<details id="my-details">
+			<summary>My Story is a click away!</summary>
+			<section>
+				<p>Hello, I am Beomsu Kim. I am from the Repulic of Korea. I came to the US in 2017. I came back to my
+					country for about a year and a half to do my duty. I practiced <b>Powershell</b> there.
+					I spent my highschool there. Here is my story I hope you enjoy it: I just came back from serving
+					military in the country. I love UCSD!
+					my attribute: I love playing <b>tennis</b>. It is my favorite sports. I am so glad that UCSD has a
+					wonderful infrastructure for the sports. I also like riding a bike. La Jolla has great bike trails.
+					<br>
+					I am a CSE major in UCSD. Here is the link for my <a href="education.html">education</a> lists.
+					If you are interested in me, feel free to make a <a href="contacts.html">contact</a> me!
+				</p>
+			</section>
+		</details>
+
+		<svg id="circle-svg" width="100" height="100" style="display:block; margin:auto;">
+			<circle style="background-image:url(assets/images/testimg.png" cx="50" cy="50" r="40" stroke-width="4" />
+			Sorry, your browser does not support inline SVG.
+		</svg>
+		<embed src="/assets/images/Resume Jul 2022.pdf" type="application/pdf" width="80%" height="50%"
+			title="be" /><br>
+		<caption>My Resume</caption>
+		<br><br>
+		<caption>Language and my experience</caption>
+		<br>
+		<br>
+		<table>
+			<tr>
+				<th><em role="title">Language</em></th>
+				<th><em role="title">Experience</em></th>
+			</tr>
+			<tr>
+				<td><code>Java</code></td>
+				<td>5 years</td>
+			</tr>
+			<tr>
+				<td><code>C++</code></td>
+				<td>4 years</td>
+			</tr>
+			<tr>
+				<td><code>Python</code></td>
+				<td>2 years</td>
+			</tr>
+		</table>
+		<br>
+	</main>
+
+	<footer>
+		<a href="contacts.html" style="text-decoration:none">
+			Contatcs
+		</a>
+		<p>Email: bek001@ucsd.edu</p>
+		<p>Tel: 469-818-4342</p>
+	</footer>
+</body>
+
+
+</html>

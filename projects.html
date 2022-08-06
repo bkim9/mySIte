@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="generalstyle.css">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RM2G8FGN7P"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		function projectEl(proj) {
+			document.getElementById('')
+		}
+
+		gtag('config', 'G-RM2G8FGN7P');
+
+		function loadProject() {
+			const selectEl = document.getElementById('projects');
+			const projectsTable = [];
+			const detailTable = [];
+			projectsTable['CSE100Project1'] = 'Huffman Coding';
+			detailTable['CSE100Project1'] = 'This project assignment is about Huffman Tree. Huffman tree is a tree structure to minimize the time expected for searching based on frequency. It can be used for optimizing a search operation by mapping item to a binary string';
+			projectsTable['CSE100Project2'] = 'Spell Checker';
+			detailTable['CSE100Project2'] = 'Spell Checker is using tree structure to approximate what would be the word the user is typing based on the input so far given by the user and tree walking'
+			projectsTable['CSE140Project1'] = 'Robertson\'s Multiplication';
+			detailTable['CSE140Project1'] = 'This assignment uses bitwise operations to practice multiplication. Bitwise operation means only using 0\'s and 1\'s. So I had to perform multiplication operation with just 1\'s and 0\'s';
+			projectsTable['CSE140Project2'] = 'System Verilog Lab';
+			detailTable['CSE140Project2'] = 'It was a project that tracks registers\' states to know and calculate the SHA256 algorithm';
+			projectsTable['CSE15LProject1'] = 'Ant and Unix Scripting';
+			detailTable['CSE15LProject1'] = 'It was a introductory assignment to introduce me to Unix shell environment'
+			projectsTable['CSE15LProject2'] = 'Unix and Vim';
+			detailTable['CSE15LProject2'] = 'Vim is a command line text editor. It\'s a terminal command version of Microsoft Word. In this assignment I learned how to use vim and its useful features'
+			projectsTable['CSE15LProject3'] = 'JUnit tests';
+			detailTable['CSE15LProject3'] = 'JUnit tests are to check if the code is running as expected. I made one in the assignment in terminal'
+			projectsTable['CS106Project1'] = 'Rock & Roll Countdown';
+			detailTable['CS106Project1'] = 'This assignment requires me to read a file of list and sort them in a descending order';
+			projectsTable['CS106Project2'] = 'DNA Splicing';
+			detailTable['CS106Project2'] = 'Given a long string of DNA strand, I had to find a pattern of dna node to cut them';
+			projectsTable['CS106Project3'] = 'XML Nesting Validator';
+			detailTable['CS106Project3'] = 'In this assignment, I was given an XML document to check if it is valid or not. I had to make sure if the xml does not have closing tags and the code is nested as it should be';
+			projectsTable['CS106Project4'] = 'Sort Comparison';
+			detailTable['CS106Project4'] = 'It let me compare various algorithms of sorting to determine which one is the fastest. There was insertion sort, quick sort, mergesort, and heapsort';
+			optgroupLabel = document.querySelector('select[name="projects"] option:checked').parentElement.label
+			let labelProject = `${optgroupLabel}${selectEl.value}`
+			let detail = detailTable[labelProject];
+			let hyperLink = `<a href="/assets/files/${optgroupLabel}/${labelProject}.pdf">more info</a>`;
+			document.querySelector('#project-output').innerHTML = `<details id="my-details"><summary>${projectsTable[labelProject]}</summary><section>${detail}<br>${hyperLink}</section></details>`;
+		}
+	</script>
+	<script type="module">
+		document.addEventListener('DOMContentLoaded', () => {
+			const projectSelectEl = document.getElementById('projects');
+			projectSelectEl.addEventListener('change', loadProject);
+		});
+	</script>
+
+	<meta charset="utf-8" />
+	<meta name="author" content="Beomsu Kim" />
+	<title>Projects</title>
+	<link rel="icon" href="/assets/images/favicon.svg">
+	<style>
+		@media screen and (min-width: 1920px) {
+			:root {
+				font-size: 48px;
+			}
+		}
+
+		@media screen and (min-width: 801px) {
+
+		}
+
+		@media screen and (max-width: 800px) {
+			:root {
+				font-size: var(--mobile-rem);
+			}
+
+			#sm-magnifier {
+				display: none;
+			}
+		}
+	</style>
+</head>
+
+
+<body>
+	<header id="site-big-header">
+		<h1>Projects</h1>
+		<!-- My navbar -->
+		<input id="toggle" type="checkbox"></input>
+		<label for="toggle" class="hamburger" role="button" aria-label="menu">
+			<div class="top-bun"></div>
+			<div class="meat"></div>
+			<div class="bottom-bun"></div>
+		</label>
+		<nav id="hamburger-nav">
+			<a href="index.html">Home</a><br>
+			<a href="mystory.html">My Story</a><br>
+			<a href="education.html">Education</a><br>
+			<a href="labs.html">Labs</a><br>
+			<a href="projects.html">Projects</a><br>
+			<a href="contacts.html">Contacts</a>
+		</nav>
+	</header>
+	<!-- search bar -->
+	<input type="search" id="query" name="query" placeholder="Search" action="./site_search.html" method="get" aria-label="search" autofocus>
+
+
+	<main>
+		<br>
+		<br>
+		<img id="bg-magnifier" src="assets/images/magnifier.png" alt="Projec1" height="250" width="250" />
+		<img id="sm-magnifier" src="assets/images/search_image.png" alt="Projec2" height="250" width="250" />
+		<br>
+		<output id="project-output"></output>
+		<br>
+		<select id="projects" name="projects">
+			<option value="select">select</option>
+			<optgroup label="CSE140" id="140">
+				<option>Project1</option>
+			</optgroup>
+			<optgroup label="CSE100" id="100">
+				<option>Project1</option>
+				<option>Project2</option>
+			</optgroup>
+			<optgroup label="CSE15L" id="15L">
+				<option>Project1</option>
+				<option>Project2</option>
+				<option>Project3</option>
+			</optgroup>
+			<optgroup label="CS106" id="106">
+				<option>Project1</option>
+				<option>Project2</option>
+				<option>Project3</option>
+				<option>Project4</option>
+			</optgroup>
+		</select>
+		<br>
+		<!-- <a href="mystory.html">learn more&gt</a> -->
+		<hr />
+	</main>
+
+	<footer>
+		<a href="contacts.html" style="text-decoration:none">
+			Contatcs
+		</a>
+		<p>Email: bek001@ucsd.edu</p>
+		<p>Tel: 469-818-4342</p>
+	</footer>
+</body>
+</li>
+</ul>
+
+</html>
